@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Category } from './../models/category';
 import { ApiService } from './api.service';
 
-Injectable();
+@Injectable()
 export class CategoryService {
 
   constructor(private api: ApiService) {}
@@ -12,9 +12,9 @@ export class CategoryService {
    */
   getAllCategories(): Promise<Category[]> {
     return new Promise((resolve, reject) => {
-      this.api.fetchAll(Category.type)
+      this.api.fetchAll('categories')
         .then(res => {
-          console.log('FETCH:', res);
+          resolve(res);
         })
         .catch(err => {
           console.log('FETCH ERROR:', err);

@@ -1,5 +1,5 @@
 export class Product {
-  public static type: string = 'category';
+  public static type: string = 'product';
 
   _id: string;
   type: string;

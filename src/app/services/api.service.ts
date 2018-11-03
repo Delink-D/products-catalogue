@@ -1,7 +1,7 @@
 import { environment } from '../../environments/environment';
 
 export class ApiService {
-  constructor(parameters) {}
+  // constructor() {}
 
   /**
    * function to fetch all type objects from the api

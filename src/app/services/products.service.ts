@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Product } from './../models/product';
 import { ApiService } from './api.service';
 
-Injectable();
+@Injectable()
 export class ProductsService {
 
   constructor(private api: ApiService) {}
@@ -15,6 +15,7 @@ export class ProductsService {
       this.api.fetchAll(Product.type)
         .then(res => {
           console.log('FETCH:', res);
+          resolve(res);
         })
         .catch(err => {
           console.log('FETCH ERROR:', err);
