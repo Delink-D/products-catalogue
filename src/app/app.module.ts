@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { CatalogueRoutingModule } from './routing';
 import { AppMaterialModule } from './material/app.material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -20,6 +22,7 @@ import { CategoriesComponent } from './categories/categories.component';
   imports: [
     BrowserModule,
     AppMaterialModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(CatalogueRoutingModule, { useHash: false })
   ],
   providers: [],

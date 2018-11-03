@@ -22,6 +22,7 @@ import {
   MatMenuModule,
   MatSlideToggleModule,
   MatExpansionModule,
+  MatSidenavModule
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
@@ -49,7 +50,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatToolbarModule,
     MatTooltipModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSidenavModule
   ]
 })
 
