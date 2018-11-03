@@ -2,5 +2,11 @@
 * {
   padding: 0;
   margin: 0;
+}
+body {
   background: #f8f8f8;
+}
+.my-sidenav {
+  width: 250px;
+  background: #2B353B;
 }
