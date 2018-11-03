@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppMaterialModule } from '../material/app.material.module';
 
 import { CategoriesComponent } from './categories.component';
-import { FacilitiesRoutingModule } from './categories-routing.module';
+import { CategoryAddComponent } from './add/category-add.component';
+import { CategoriesRoutingModule } from './categories-routing.module';
 import { CategoryListComponent, DeleteCategoryDialogComponent } from './list/category-list.component';
 
 @NgModule({
@@ -19,10 +20,11 @@ import { CategoryListComponent, DeleteCategoryDialogComponent } from './list/cat
     HttpClientModule,
     AppMaterialModule,
     ReactiveFormsModule,
-    FacilitiesRoutingModule
+    CategoriesRoutingModule
   ],
   declarations: [
     CategoriesComponent,
+    CategoryAddComponent,
     CategoryListComponent,
     DeleteCategoryDialogComponent
   ],

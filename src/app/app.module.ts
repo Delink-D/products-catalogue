@@ -10,7 +10,6 @@ import { CategoriesModule } from './categories/categories.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ReportingComponent } from './reporting/reporting.component';
-import { CategoriesComponent } from './categories/categories.component';
 
 import { ApiService } from '../app/services/api.service';
 import { CategoryService } from '../app/services/category.service';
@@ -20,8 +19,7 @@ import { ProductsService } from '../app/services/products.service';
   declarations: [
     AppComponent,
     ProductsComponent,
-    ReportingComponent,
-    CategoriesComponent
+    ReportingComponent
   ],
   imports: [
     BrowserModule,
