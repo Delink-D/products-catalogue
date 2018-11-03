@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Product } from './../models/product';
+import { Category } from './../models/category';
 import { ApiService } from './api.service';
 
 Injectable();
-export class ProductsService {
+export class CategoryService {
 
   constructor(private api: ApiService) {}
 
   /**
-   * function to get all the products from the database
+   * function to get all the categories from the database
    */
-  getAllProducts(): Promise<Product[]> {
+  getAllCategories(): Promise<Category[]> {
     return new Promise((resolve, reject) => {
-      this.api.fetchAll(Product.type)
+      this.api.fetchAll(Category.type)
         .then(res => {
           console.log('FETCH:', res);
         })
