@@ -1,9 +1,10 @@
 import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ApiService {
-  // constructor() {}
+  constructor(private http: HttpClient) {}
 
   /**
    * function to fetch all type objects from the api
@@ -11,10 +12,11 @@ export class ApiService {
    */
   fetchAll(type: string): Promise<any[]> {
     return new Promise((resolve, reject) => {
-      fetch(environment.api + type)
+      this.http.get(environment.api + type)
+        .toPromise()
         .then((res: any) => {
-          const all = res.json();
-          resolve(all);
+          console.log('Fetched:', res.length, 'records of', type);
+          resolve(res);
         })
         .catch(err => {
           console.log('Error: fetching', type);
