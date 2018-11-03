@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+
+import { CatalogueRoutingModule } from './routing';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -14,7 +17,8 @@ import { CategoriesComponent } from './categories/categories.component';
     CategoriesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(CatalogueRoutingModule, { useHash: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
