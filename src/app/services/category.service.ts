@@ -22,4 +22,17 @@ export class CategoryService {
         });
     });
   }
+
+  updateCategory(category: Category): Promise<Category> {
+    return new Promise((resolve, reject) => {
+      this.api.addRecord('categories', category)
+        .then(res => {
+          resolve(res);
+        })
+        .catch(err => {
+          console.log('ERROR ADDING:', err);
+          reject(err);
+        });
+    });
+  }
 }
