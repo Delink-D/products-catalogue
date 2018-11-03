@@ -11,8 +11,8 @@ export class ApiService {
     return new Promise((resolve, reject) => {
       fetch(environment.api + type)
         .then((res: any) => {
-          console.log('Fetched:', res.length, 'objects of', type);
-          resolve(res);
+          const all = res.json();
+          resolve(all);
         })
         .catch(err => {
           console.log('Error: fetching', type);
