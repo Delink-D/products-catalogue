@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { CatalogueRoutingModule } from './routing';
+import { AppMaterialModule } from './material/app.material.module';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -18,6 +19,7 @@ import { CategoriesComponent } from './categories/categories.component';
   ],
   imports: [
     BrowserModule,
+    AppMaterialModule,
     RouterModule.forRoot(CatalogueRoutingModule, { useHash: false })
   ],
   providers: [],
