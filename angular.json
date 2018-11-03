@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "products-catalog": {
+    "products-catalogue": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/products-catalog",
+            "outputPath": "dist/products-catalogue",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "products-catalog:build"
+            "browserTarget": "products-catalogue:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "products-catalog:build:production"
+              "browserTarget": "products-catalogue:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "products-catalog:build"
+            "browserTarget": "products-catalogue:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "products-catalog-e2e": {
+    "products-catalogue-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "products-catalog:serve"
+            "devServerTarget": "products-catalogue:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "products-catalog:serve:production"
+              "devServerTarget": "products-catalogue:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "products-catalog"
+  "defaultProject": "products-catalogue"
 }
