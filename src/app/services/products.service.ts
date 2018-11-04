@@ -12,9 +12,9 @@ export class ProductsService {
    */
   getAllProducts(): Promise<Product[]> {
     return new Promise((resolve, reject) => {
-      this.api.fetchAll(Product.type)
+      const type = 'products';
+      this.api.fetchAll(type)
         .then(res => {
-          console.log('FETCH:', res);
           resolve(res);
         })
         .catch(err => {

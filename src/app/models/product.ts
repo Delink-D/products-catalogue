@@ -1,7 +1,7 @@
 export class Product {
   public static type: string = 'product';
 
-  _id: string;
+  id: string;
   type: string;
   productCode: string;
   productName: string;

@@ -1,6 +1,6 @@
 export class Category {
   public static type: string = 'category';
-
+  id: string;
   type: string;
   categoryCode: string;
   categoryName: string;
