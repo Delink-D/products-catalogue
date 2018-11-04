@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Category } from '../../models/category';
 
@@ -8,9 +8,9 @@ import { Category } from '../../models/category';
 })
 
 export class CategoryAddComponent implements OnInit {
-  // @Output() categories: Category;
+  @Output() categoryAdded: EventEmitter<Category> = new EventEmitter<Category>();
 
-  category: Category;
+  category: Category = new Category();
   categoryForm: FormGroup;
 
   ngOnInit() {}
@@ -20,5 +20,15 @@ export class CategoryAddComponent implements OnInit {
       categoryName: ['', Validators.required],
       categoryCode: ['', Validators.required]
     });
+  }
+
+  /**
+   * function to save record
+   */
+  saveCategory(e: Event) {
+    e.preventDefault();
+    console.log(this.category);
+    // output added category to parent
+    this.categoryAdded.emit(this.category);
   }
 }

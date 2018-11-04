@@ -1,10 +1,13 @@
 <h2 style="padding: 10px;">Add Category</h2>
+{{category | json}}
 <form [formGroup]="categoryForm">
   <mat-form-field>
-    <input matInput placeholder="Category Name" formControlName="categoryName">
+    <input matInput [(ngModel)]="category.categoryName" placeholder="Category Name" formControlName="categoryName">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Category Code" formControlName="categoryCode">
+    <input matInput [(ngModel)]="category.categoryCode" placeholder="Category Code" formControlName="categoryCode">
   </mat-form-field>
+
+  <button mat-raised-button (click)="saveCategory($event)">Save</button>
 </form>
