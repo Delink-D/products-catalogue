@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../models/category';
+import { Product } from '../models/product';
+import { CategoryService } from '../services/category.service';
+import { ProductsService } from '../services/products.service';
+
 import * as CanvasJS from '../../assets/canvasjs.min';
 
 @Component({
@@ -7,8 +12,15 @@ import * as CanvasJS from '../../assets/canvasjs.min';
   styleUrls: ['./reporting.component.css']
 })
 export class ReportingComponent implements OnInit {
+  categories: Category[];
+  products: Product[];
+  categoryProducts = new Array<any>();
 
-  constructor() { }
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductsService,
+
+  ) { }
 
   ngOnInit() {
   }
