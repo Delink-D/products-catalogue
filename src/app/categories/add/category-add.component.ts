@@ -27,8 +27,7 @@ export class CategoryAddComponent implements OnInit {
    */
   saveCategory(e: Event) {
     e.preventDefault();
-    console.log(this.category);
-    // output added category to parent
-    this.categoryAdded.emit(this.category);
+    this.categoryAdded.emit(this.category); // output added category to parent
+    this.categoryForm.reset(); // reset the form after submit
   }
 }
