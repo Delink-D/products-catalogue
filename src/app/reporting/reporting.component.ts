@@ -55,4 +55,12 @@ export class ReportingComponent implements OnInit {
         // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
       });
   }
+
+  filterProducts(catCode) {
+    const count = this.products.filter(x => {
+      return x.categoryCode === catCode;
+    });
+
+    return count.length;
+  }
 }
