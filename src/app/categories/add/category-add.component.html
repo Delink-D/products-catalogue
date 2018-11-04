@@ -1,13 +1,28 @@
 <h2 style="padding: 10px;">Add Category</h2>
-{{category | json}}
-<form [formGroup]="categoryForm">
-  <mat-form-field>
-    <input matInput [(ngModel)]="category.categoryName" placeholder="Category Name" formControlName="categoryName">
-  </mat-form-field>
 
-  <mat-form-field>
-    <input matInput [(ngModel)]="category.categoryCode" placeholder="Category Code" formControlName="categoryCode">
-  </mat-form-field>
+<mat-accordion>
+  <mat-expansion-panel>
 
-  <button mat-raised-button (click)="saveCategory($event)">Save</button>
-</form>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Add Category
+      </mat-panel-title>
+      <mat-panel-description>
+        Open the accordion to submit a new category
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form [formGroup]="categoryForm">
+      <mat-form-field class="width45">
+        <input matInput [(ngModel)]="category.categoryName" placeholder="Category Name" formControlName="categoryName">
+      </mat-form-field>
+
+      <mat-form-field class="width45">
+        <input matInput [(ngModel)]="category.categoryCode" placeholder="Category Code" formControlName="categoryCode">
+      </mat-form-field>
+
+      <button mat-raised-button [disabled]="!categoryForm.valid" (click)="saveCategory($event)">Save</button>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>
