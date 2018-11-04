@@ -40,4 +40,19 @@ export class ReportingComponent implements OnInit {
         // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
       });
   }
+
+  /**
+   * function to fetch all the categories
+   */
+  getProducts() {
+    this.productService.getAllProducts()
+      .then((products: Product[]) => {
+        this.products = products;
+        this.analyzeData(); //  call funtion for charting
+      })
+      .catch(err => {
+        console.log('FETCH ERR:', err);
+        // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
+      });
+  }
 }
