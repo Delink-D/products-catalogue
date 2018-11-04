@@ -9,6 +9,9 @@ body {
 .with100 {
   width: 100%;
 }
+.width45 {
+  width: 45%;
+}
 #heading-one {
   font-size: 1.5em;
   color: #f8f8f8;
@@ -24,4 +27,14 @@ body {
   padding: 10px;
   height: 456px;
   background: #fff;
+}
+.nav-list {
+  color: #f8f8f8!important;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  border-bottom: 1px solid #fff;
+}
+.nav-list:hover {
+  color: #222!important;
+  background: #f8f8f8;
 }
