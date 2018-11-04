@@ -6,7 +6,22 @@
 body {
   background: #f8f8f8;
 }
-.my-sidenav {
+.with100 {
+  width: 100%;
+}
+#heading-one {
+  font-size: 1.5em;
+  color: #f8f8f8;
+  margin-left: 10px;
+}
+#sidenav {
   width: 250px;
+  padding: 10px;
   background: #2B353B;
+}
+#sidenav-content {
+  height: 456;
+  padding: 10px;
+  height: 456px;
+  background: #fff;
 }
