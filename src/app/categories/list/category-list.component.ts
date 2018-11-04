@@ -24,8 +24,12 @@ export class DeleteCategoryDialogComponent {
 
 export class CategoryListComponent implements OnInit {
   @Input() categories: Category[];
+  displayedColumns: string[] = ['id', 'code', 'name', 'dateAdded'];
+  dataSource;
 
   ngOnInit() {}
 
-  constructor() {}
+  constructor() {
+    this.dataSource = this.categories;
+  }
 }
