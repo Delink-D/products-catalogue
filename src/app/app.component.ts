@@ -11,7 +11,7 @@ export class AppComponent {
   constructor() {
     this.options = {
       bottom: 100,
-      fixed: true,
+      fixed: false,
       top: 177
     };
   }
