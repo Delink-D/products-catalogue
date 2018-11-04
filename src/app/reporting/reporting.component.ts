@@ -23,6 +23,21 @@ export class ReportingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getCategories();
   }
 
+  /**
+   * function to fetch all the categories
+   */
+  getCategories() {
+    this.categoryService.getAllCategories()
+      .then((categories: Category[]) => {
+        this.categories = categories;
+        this.getProducts();
+      })
+      .catch(err => {
+        console.log('FETCH ERR:', err);
+        // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
+      });
+  }
 }
