@@ -63,4 +63,32 @@ export class ReportingComponent implements OnInit {
 
     return count.length;
   }
+
+  /**
+   * function to render graph to the DOM
+   */
+  analyzeData() {
+    this.categories.forEach(category => {
+      const item = { label: category.categoryName, y: this.filterProducts(category.categoryCode) };
+      this.categoryProducts.push(item);
+    });
+
+    const chart = new CanvasJS.Chart('chartContainer', {
+      theme: 'light2',
+      animationEnabled: true,
+      exportEnabled: true,
+      title: {
+        text: 'Category Products graph'
+      },
+      data: [{
+        type: 'column',
+        showInLegend: true,
+        toolTipContent: '<b>{name}</b>: ${y} (#percent%)',
+        indexLabel: '{name} - #percent%',
+        dataPoints: this.categoryProducts
+      }]
+    });
+
+    chart.render();
+  }
 }
