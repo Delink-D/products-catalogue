@@ -1,21 +1,23 @@
-<ng-container>
-  <!-- toolbar -->
-  <mat-toolbar style="background-color: #FB8812;">
-    <h1 style="margin-left: 10px; color: #f8f8f8;">Products Catalogue</h1>
-  </mat-toolbar>
+<div style="margin: 10%;">
+  <ng-container>
+    <!-- toolbar -->
+    <mat-toolbar style="background-color: #FB8812;">
+      <h1 id="heading-one">Products Catalogue</h1>
+    </mat-toolbar>
 
-  <!-- sidenav -->
-  <mat-sidenav-container>
-      <mat-sidenav #sidenav mode="side" opened class="my-sidenav"
-                  [fixedInViewport]="options.fixed" [fixedTopGap]="options.top"
-                  [fixedBottomGap]="options.bottom">
-        {{options.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
-      </mat-sidenav>
+    <!-- sidenav -->
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="side" opened id="sidenav"
+                    [fixedInViewport]="options.fixed" [fixedTopGap]="options.top"
+                    [fixedBottomGap]="options.bottom">
+          {{options.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+        </mat-sidenav>
 
-      <mat-sidenav-content>
-        <!-- body content -->
-        <router-outlet></router-outlet>
-      </mat-sidenav-content>
+        <mat-sidenav-content id="sidenav-content">
+          <!-- body content -->
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
 
-    </mat-sidenav-container>
-</ng-container>
+      </mat-sidenav-container>
+  </ng-container>
+</div>
