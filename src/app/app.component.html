@@ -10,7 +10,11 @@
         <mat-sidenav #sidenav mode="side" opened id="sidenav"
                     [fixedInViewport]="options.fixed" [fixedTopGap]="options.top"
                     [fixedBottomGap]="options.bottom">
-          {{options.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+          <mat-list role="list">
+            <mat-list-item class="nav-list" role="listitem" routerLink="/categories" routerLinkActive="active">Categories</mat-list-item>
+            <mat-list-item class="nav-list" role="listitem" routerLink="/products" routerLinkActive="active">Products</mat-list-item>
+            <mat-list-item class="nav-list" role="listitem" routerLink="/reporting" routerLinkActive="active">Reports</mat-list-item>
+          </mat-list>
         </mat-sidenav>
 
         <mat-sidenav-content id="sidenav-content">
