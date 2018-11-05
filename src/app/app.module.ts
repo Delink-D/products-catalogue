@@ -6,9 +6,10 @@ import { CatalogueRoutingModule } from './routing';
 import { AppMaterialModule } from './material/app.material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesModule } from './categories/categories.module';
+import { ProductsModule } from './products/products.module';
+
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
 import { ReportingComponent } from './reporting/reporting.component';
 
 import { ApiService } from '../app/services/api.service';
@@ -18,11 +19,11 @@ import { ProductsService } from '../app/services/products.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
     ReportingComponent
   ],
   imports: [
     BrowserModule,
+    ProductsModule,
     CategoriesModule,
     AppMaterialModule,
     BrowserAnimationsModule,
