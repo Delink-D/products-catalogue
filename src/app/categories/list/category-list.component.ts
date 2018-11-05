@@ -32,4 +32,12 @@ export class CategoryListComponent implements OnInit {
   constructor() {
     this.dataSource = this.categories;
   }
+
+  editCategory() {
+    // output record from here
+  }
+
+  deleteCategory() {
+    // output record from here
+  }
 }
