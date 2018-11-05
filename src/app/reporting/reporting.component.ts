@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 import { Category } from '../models/category';
 import { Product } from '../models/product';
 import { CategoryService } from '../services/category.service';
@@ -18,6 +19,7 @@ export class ReportingComponent implements OnInit {
   noData: Boolean = false;
 
   constructor(
+    private snackbar: MatSnackBar,
     private categoryService: CategoryService,
     private productService: ProductsService,
 
@@ -39,7 +41,7 @@ export class ReportingComponent implements OnInit {
       .catch(err => {
         this.noData = true;
         console.log('FETCH ERR:', err);
-        // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
+        this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
       });
   }
 
@@ -55,7 +57,7 @@ export class ReportingComponent implements OnInit {
       .catch(err => {
         this.noData = true;
         console.log('FETCH ERR:', err);
-        // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
+        this.snackbar.open('ERROR: Fetching products', 'ERROR', { duration: 600 });
       });
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 import { Product } from '../models/product';
 import { ProductsService } from '../services/products.service';
 
@@ -11,6 +12,7 @@ export class ProductsComponent implements OnInit {
   products: Product[];
 
   constructor(
+    private snackbar: MatSnackBar,
     private productService: ProductsService
   ) { }
 
@@ -28,7 +30,7 @@ export class ProductsComponent implements OnInit {
       })
       .catch(err => {
         console.log('ERROR:', err);
-        // TODO: snackbar here
+        this.snackbar.open('ERROE: Fetching products', 'Error', { duration: 1000 });
       });
   }
 
