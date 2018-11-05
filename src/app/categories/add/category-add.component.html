@@ -21,7 +21,7 @@
         <input matInput [(ngModel)]="category.categoryCode" placeholder="Category Code" formControlName="categoryCode">
       </mat-form-field>
 
-      <button mat-raised-button [disabled]="!categoryForm.valid" (click)="saveCategory($event)">Save</button>
+      <button mat-raised-button [disabled]="!categoryForm.valid" (click)="saveCategory($event)" style="float: right;">Save</button>
     </form>
 
   </mat-expansion-panel>
