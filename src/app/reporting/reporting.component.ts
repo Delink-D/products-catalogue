@@ -15,6 +15,7 @@ export class ReportingComponent implements OnInit {
   categories: Category[];
   products: Product[];
   categoryProducts = new Array<any>();
+  noData: Boolean = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -36,6 +37,7 @@ export class ReportingComponent implements OnInit {
         this.getProducts();
       })
       .catch(err => {
+        this.noData = true;
         console.log('FETCH ERR:', err);
         // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
       });
@@ -51,6 +53,7 @@ export class ReportingComponent implements OnInit {
         this.analyzeData(); //  call funtion for charting
       })
       .catch(err => {
+        this.noData = true;
         console.log('FETCH ERR:', err);
         // this.snackbar.open('ERROR: Fetching Categories', 'ERROR', { duration: 600 });
       });
@@ -89,6 +92,7 @@ export class ReportingComponent implements OnInit {
       }]
     });
 
+    this.noData = false;
     chart.render();
   }
 }
